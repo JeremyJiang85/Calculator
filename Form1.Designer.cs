@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tb_dispay_top = new System.Windows.Forms.TextBox();
-            this.tb_dispay_bottom = new System.Windows.Forms.TextBox();
             this.btn_AC = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_divide = new System.Windows.Forms.Button();
@@ -49,27 +47,9 @@
             this.btn_3 = new System.Windows.Forms.Button();
             this.btn_2 = new System.Windows.Forms.Button();
             this.btn_1 = new System.Windows.Forms.Button();
+            this.lbl_display_top = new System.Windows.Forms.Label();
+            this.lbl_display_bottom = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // tb_dispay_top
-            // 
-            this.tb_dispay_top.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_dispay_top.Font = new System.Drawing.Font("新細明體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_dispay_top.Location = new System.Drawing.Point(12, 12);
-            this.tb_dispay_top.Name = "tb_dispay_top";
-            this.tb_dispay_top.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tb_dispay_top.Size = new System.Drawing.Size(318, 40);
-            this.tb_dispay_top.TabIndex = 0;
-            // 
-            // tb_dispay_bottom
-            // 
-            this.tb_dispay_bottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_dispay_bottom.Font = new System.Drawing.Font("新細明體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_dispay_bottom.Location = new System.Drawing.Point(12, 58);
-            this.tb_dispay_bottom.Name = "tb_dispay_bottom";
-            this.tb_dispay_bottom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tb_dispay_bottom.Size = new System.Drawing.Size(318, 40);
-            this.tb_dispay_bottom.TabIndex = 1;
             // 
             // btn_AC
             // 
@@ -108,6 +88,7 @@
             this.btn_divide.TabIndex = 5;
             this.btn_divide.Text = "/";
             this.btn_divide.UseVisualStyleBackColor = false;
+            this.btn_divide.Click += new System.EventHandler(this.btn_plus_Click);
             // 
             // btn_changeSign
             // 
@@ -120,6 +101,7 @@
             this.btn_changeSign.TabIndex = 4;
             this.btn_changeSign.Text = "+/-";
             this.btn_changeSign.UseVisualStyleBackColor = false;
+            this.btn_changeSign.Click += new System.EventHandler(this.btn_changeSign_Click);
             // 
             // btn_multiply
             // 
@@ -132,6 +114,7 @@
             this.btn_multiply.TabIndex = 9;
             this.btn_multiply.Text = "*";
             this.btn_multiply.UseVisualStyleBackColor = false;
+            this.btn_multiply.Click += new System.EventHandler(this.btn_plus_Click);
             // 
             // btn_9
             // 
@@ -183,6 +166,7 @@
             this.btn_minus.TabIndex = 13;
             this.btn_minus.Text = "-";
             this.btn_minus.UseVisualStyleBackColor = false;
+            this.btn_minus.Click += new System.EventHandler(this.btn_plus_Click);
             // 
             // btn_6
             // 
@@ -234,6 +218,7 @@
             this.btn_equal.TabIndex = 17;
             this.btn_equal.Text = "=";
             this.btn_equal.UseVisualStyleBackColor = false;
+            this.btn_equal.Click += new System.EventHandler(this.btn_equal_Click);
             // 
             // btn_point
             // 
@@ -272,6 +257,7 @@
             this.btn_plus.TabIndex = 21;
             this.btn_plus.Text = "+";
             this.btn_plus.UseVisualStyleBackColor = false;
+            this.btn_plus.Click += new System.EventHandler(this.btn_plus_Click);
             // 
             // btn_3
             // 
@@ -312,11 +298,33 @@
             this.btn_1.UseVisualStyleBackColor = false;
             this.btn_1.Click += new System.EventHandler(this.btn_1_Click);
             // 
+            // lbl_display_top
+            // 
+            this.lbl_display_top.Font = new System.Drawing.Font("新細明體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbl_display_top.Location = new System.Drawing.Point(12, 13);
+            this.lbl_display_top.Name = "lbl_display_top";
+            this.lbl_display_top.Size = new System.Drawing.Size(318, 40);
+            this.lbl_display_top.TabIndex = 22;
+            this.lbl_display_top.Text = "label1";
+            this.lbl_display_top.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_display_bottom
+            // 
+            this.lbl_display_bottom.Font = new System.Drawing.Font("新細明體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbl_display_bottom.Location = new System.Drawing.Point(12, 53);
+            this.lbl_display_bottom.Name = "lbl_display_bottom";
+            this.lbl_display_bottom.Size = new System.Drawing.Size(318, 40);
+            this.lbl_display_bottom.TabIndex = 23;
+            this.lbl_display_bottom.Text = "label2";
+            this.lbl_display_bottom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(345, 517);
+            this.Controls.Add(this.lbl_display_bottom);
+            this.Controls.Add(this.lbl_display_top);
             this.Controls.Add(this.btn_plus);
             this.Controls.Add(this.btn_3);
             this.Controls.Add(this.btn_2);
@@ -336,19 +344,14 @@
             this.Controls.Add(this.btn_changeSign);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_AC);
-            this.Controls.Add(this.tb_dispay_bottom);
-            this.Controls.Add(this.tb_dispay_top);
             this.Name = "Calculator";
             this.Text = "Calculator";
+            this.Load += new System.EventHandler(this.Calculator_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox tb_dispay_top;
-        private System.Windows.Forms.TextBox tb_dispay_bottom;
         private System.Windows.Forms.Button btn_AC;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Button btn_divide;
@@ -368,6 +371,8 @@
         private System.Windows.Forms.Button btn_3;
         private System.Windows.Forms.Button btn_2;
         private System.Windows.Forms.Button btn_1;
+        private System.Windows.Forms.Label lbl_display_top;
+        private System.Windows.Forms.Label lbl_display_bottom;
     }
 }
 
