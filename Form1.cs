@@ -128,7 +128,7 @@ namespace Calculator
 
         private void btn_equal_Click(object sender, EventArgs e)
         {
-            if (OP == null || string.IsNullOrEmpty(display_bottom))
+            if (OP == null || string.IsNullOrEmpty(display_bottom) || string.IsNullOrEmpty(display_top))
                 return;
             display_top = Convert.ToString(OP(Convert.ToDouble(display_top), Convert.ToDouble(display_bottom)));
             display_bottom = "";
@@ -140,7 +140,7 @@ namespace Calculator
         private void btn_plus_Click(object sender, EventArgs e)
         {
             Button btnhit = (Button)sender;
-            if (OP == null && display_top == "")
+            if (string.IsNullOrEmpty(display_top))
             {
                 display_top = display_bottom;
                 display_bottom = "";
