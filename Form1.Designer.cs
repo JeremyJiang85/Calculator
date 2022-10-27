@@ -1,6 +1,6 @@
 ﻿namespace Calculator
 {
-    partial class Form1
+    partial class Calculator
     {
         /// <summary>
         /// 設計工具所需的變數。
@@ -82,6 +82,7 @@
             this.btn_AC.TabIndex = 2;
             this.btn_AC.Text = "AC";
             this.btn_AC.UseVisualStyleBackColor = false;
+            this.btn_AC.Click += new System.EventHandler(this.btn_AC_Click);
             // 
             // btn_back
             // 
@@ -94,6 +95,7 @@
             this.btn_back.TabIndex = 3;
             this.btn_back.Text = "->";
             this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // btn_divide
             // 
@@ -142,6 +144,7 @@
             this.btn_9.TabIndex = 8;
             this.btn_9.Text = "9";
             this.btn_9.UseVisualStyleBackColor = false;
+            this.btn_9.Click += new System.EventHandler(this.btn_1_Click);
             // 
             // btn_8
             // 
@@ -154,6 +157,7 @@
             this.btn_8.TabIndex = 7;
             this.btn_8.Text = "8";
             this.btn_8.UseVisualStyleBackColor = false;
+            this.btn_8.Click += new System.EventHandler(this.btn_1_Click);
             // 
             // btn_7
             // 
@@ -166,6 +170,7 @@
             this.btn_7.TabIndex = 6;
             this.btn_7.Text = "7";
             this.btn_7.UseVisualStyleBackColor = false;
+            this.btn_7.Click += new System.EventHandler(this.btn_1_Click);
             // 
             // btn_minus
             // 
@@ -190,6 +195,7 @@
             this.btn_6.TabIndex = 12;
             this.btn_6.Text = "6";
             this.btn_6.UseVisualStyleBackColor = false;
+            this.btn_6.Click += new System.EventHandler(this.btn_1_Click);
             // 
             // btn_5
             // 
@@ -202,6 +208,7 @@
             this.btn_5.TabIndex = 11;
             this.btn_5.Text = "5";
             this.btn_5.UseVisualStyleBackColor = false;
+            this.btn_5.Click += new System.EventHandler(this.btn_1_Click);
             // 
             // btn_4
             // 
@@ -214,6 +221,7 @@
             this.btn_4.TabIndex = 10;
             this.btn_4.Text = "4";
             this.btn_4.UseVisualStyleBackColor = false;
+            this.btn_4.Click += new System.EventHandler(this.btn_1_Click);
             // 
             // btn_equal
             // 
@@ -238,6 +246,7 @@
             this.btn_point.TabIndex = 16;
             this.btn_point.Text = ".";
             this.btn_point.UseVisualStyleBackColor = false;
+            this.btn_point.Click += new System.EventHandler(this.btn_point_Click);
             // 
             // btn_0
             // 
@@ -250,6 +259,7 @@
             this.btn_0.TabIndex = 14;
             this.btn_0.Text = "0";
             this.btn_0.UseVisualStyleBackColor = false;
+            this.btn_0.Click += new System.EventHandler(this.btn_0_Click);
             // 
             // btn_plus
             // 
@@ -274,6 +284,7 @@
             this.btn_3.TabIndex = 20;
             this.btn_3.Text = "3";
             this.btn_3.UseVisualStyleBackColor = false;
+            this.btn_3.Click += new System.EventHandler(this.btn_1_Click);
             // 
             // btn_2
             // 
@@ -286,6 +297,7 @@
             this.btn_2.TabIndex = 19;
             this.btn_2.Text = "2";
             this.btn_2.UseVisualStyleBackColor = false;
+            this.btn_2.Click += new System.EventHandler(this.btn_1_Click);
             // 
             // btn_1
             // 
@@ -298,8 +310,9 @@
             this.btn_1.TabIndex = 18;
             this.btn_1.Text = "1";
             this.btn_1.UseVisualStyleBackColor = false;
+            this.btn_1.Click += new System.EventHandler(this.btn_1_Click);
             // 
-            // Form1
+            // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -325,8 +338,8 @@
             this.Controls.Add(this.btn_AC);
             this.Controls.Add(this.tb_dispay_bottom);
             this.Controls.Add(this.tb_dispay_top);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Calculator";
+            this.Text = "Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();
 
