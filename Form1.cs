@@ -14,7 +14,7 @@ namespace Calculator
     {
         //變數宣告區
         public delegate double Operater(double op1, double op2);
-        public string display_top = "", display_bottom = "";
+        public string display_top = "", display_bottom = "", display_operator = "";
         public bool fg_point = false;
         Operater OP = null;
 
@@ -32,6 +32,7 @@ namespace Calculator
         {
             lbl_display_top.Text = display_top;
             lbl_display_bottom.Text = display_bottom;
+            lbl_display_operator.Text = display_operator;
         }
 
         public double plus(double op1, double op2)
@@ -95,6 +96,7 @@ namespace Calculator
         {
             display_top = "";
             display_bottom = "";
+            display_operator = "";
             fg_point = false;
             OP = null;
             DisplayRefresh();
@@ -132,6 +134,7 @@ namespace Calculator
                 return;
             display_top = Convert.ToString(OP(Convert.ToDouble(display_top), Convert.ToDouble(display_bottom)));
             display_bottom = "";
+            display_operator = "";
             fg_point = false;
             OP = null;
             DisplayRefresh();
@@ -153,6 +156,7 @@ namespace Calculator
                 display_bottom = "";
                 fg_point = false;
             }
+            display_operator = btnhit.Text;
             switch (btnhit.Text)
             {
                 case "+":
